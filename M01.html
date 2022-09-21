@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punny Web</title>
+    <style>
+        h1, p, form{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Punny Web</h1>
+    <p>Website akan segera dapat diakses lengkap pada</p>
+    <p>Now: <p id="now"></p></p>
+    <form action="#">
+        <input type="email" id="user_email">
+        <button  id="notif">Get Notification</button>
+    </form>
+    <script>
+        let tanggal_hari_ini = new Date(Date.now()),
+        now = document.getElementById("now")
+        now.innerHTML = tanggal_hari_ini.toLocaleDateString()
+
+        let notif = document.getElementById("notif")
+        notif.onclick = function() {
+            let user_email = document.getElementById("user_email").value
+            alert("Kami akan memberikan notifikasi ke " + user_email+ ". Terima kasih")
+        }
+    </script>
+</body>
+</html>
